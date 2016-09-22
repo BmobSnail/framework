@@ -82,6 +82,8 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
             mHandler.obtainMessage(DISMISS_PROGRESS_DIALOG).sendToTarget();
     }
 
+
+
     @Override
     public void onNext(T t) {
 
@@ -91,6 +93,8 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
     private void onCancelProgress() {
         if (!this.isUnsubscribed()) {
             this.unsubscribe();
+            mHandler = null;
+            mDialog = null;
         }
     }
 }
