@@ -3,7 +3,6 @@ package chengxinet.chengxilibs.global;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Environment;
-import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.text.TextUtils;
 
@@ -20,12 +19,6 @@ import java.io.File;
 public abstract class ChengXiApplication extends MultiDexApplication {
 
     private File cacheDir;
-
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this);
-    }
 
     @Override
     public void onCreate() {
